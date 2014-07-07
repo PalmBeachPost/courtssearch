@@ -17,6 +17,8 @@ HOW IT WORKS
 TO DO
 ===
 - Make defendant names unique
+- Sort the names by numebr of charges
+- Add details on what is happening in court today (look at column S and Y)
 
 
 SUGGESTIONS
