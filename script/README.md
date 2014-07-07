@@ -1,7 +1,7 @@
 This folder contains scripts to interface with outlook
 
 Requirements
-1. Powershell
+1. Powershell 3.0
 2. Outlook must be running
 
 
