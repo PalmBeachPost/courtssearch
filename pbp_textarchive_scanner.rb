@@ -21,7 +21,7 @@ defendants = DB[:defendants]
 
 today_date = (Time.now).strftime("%Y-%m-%d")
 
-File.open("defendants_"+today_date+".txt","w"){|f|
+File.open("defendants_"+today_date+".csv","w"){|f|
 	headers = [
 		"Defendant",
 		"Number of matches",
@@ -54,7 +54,7 @@ File.open("defendants_"+today_date+".txt","w"){|f|
 				:scan_date =>  today_date
 			)
 
-			f.puts(match_arr.join("\t"))
+			f.puts(match_arr.to_csv)
 			p match_arr
 		end
 	}

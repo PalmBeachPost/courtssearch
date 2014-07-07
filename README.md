@@ -11,6 +11,7 @@ HOW IT WORKS
 4) Counts how many stories in the archives have the defendant's name...
 5) Gets the URL for the search results of the defendant's name...
 6) Adds to a SQLite database the defendant's first and last name, number of archived print stories with the defendant's first and last name, and the URL to those search results
+7) Adds to a CSV the stuff it adds to the SQLite database.
 
 
 TO DO
