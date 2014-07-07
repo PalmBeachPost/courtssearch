@@ -1,6 +1,6 @@
 param(
     $path ="c:\temp",
-    $foldername ="courtscsv"
+    $folder ="courtscsv"
     )
 
 $olFolderInbox = 6
@@ -9,7 +9,7 @@ $objOutlook = new-object -com outlook.application;
 $ns = $objOutlook.GetNameSpace("MAPI");
 $inbox = $ns.GetDefaultFolder($olFolderInbox)
 
-$targetfolder = $inbox.Folders | where-object { $_.name -eq $foldername }
+$targetfolder = $inbox.Folders | where-object { $_.name -eq $folder }
 $message = $targetfolder.Items | where-object {$_.subject -like "*CSV*" -and $_.receivedTime.dayofyear -eq (get-date).dayofyear}
 
 $message.attachments|foreach{
