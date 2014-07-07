@@ -1,7 +1,7 @@
 param(
     $sendTo = "ksukumar@pbpost.com,cpersaud@pbpost.com",
     $attachment ="c:\temp\file.csv",
-    $bodytext ="testing! ignore mail"
+    $bodytext =" "
     )
 
 $outlook = new-object -com outlook.application; 
