@@ -19,7 +19,6 @@ TO DO
 - Make defendant names unique
 - Sort the names by number of charges
 - Add details on what is happening in court today (look at column S and Y)
-- Drop names with 0 hits
 
 
 SUGGESTIONS
