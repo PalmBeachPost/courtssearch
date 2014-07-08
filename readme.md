@@ -17,8 +17,9 @@ HOW IT WORKS
 TO DO
 ===
 - Make defendant names unique
-- Sort the names by numebr of charges
+- Sort the names by number of charges
 - Add details on what is happening in court today (look at column S and Y)
+- Drop names with 0 hits
 
 
 SUGGESTIONS
@@ -26,6 +27,10 @@ SUGGESTIONS
 - Add defense attorney info
 - Add judge info
 - Add charge info
+
+BUG
+=====
+- Add Comma to header values
 
 DOWNLOADING ATTACHMENT
 -----------------------
