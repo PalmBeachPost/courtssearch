@@ -26,7 +26,7 @@ File.open("../datafiles/defendants_"+today_date+".csv","w"){|f|
 		"Defendant",
 		"Number of matches",
 		"Search results URL"
-	].join("\t")
+	].join(",")
 
 	f.puts(headers)
 	

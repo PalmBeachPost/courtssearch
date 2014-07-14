@@ -29,7 +29,7 @@ SUGGESTIONS
 
 BUG
 =====
-- Add Comma to header values
+- Add Comma to header values (DONE)
 
 DOWNLOADING ATTACHMENT
 -----------------------
