@@ -1,6 +1,6 @@
 param(
-    $sendTo = "ksukumar@pbpost.com,cpersaud@pbpost.com",
-    $attachment ="c:\temp\file.csv",
+    $sendTo = "ksukumar@pbpost.com",
+    $attachment ="..\datafiles\readme.md",
     $bodytext =" "
     )
 
@@ -11,7 +11,8 @@ $mail = $outlook.CreateItem(0)
 $datestring = get-date -format d
 $mail.subject ="Courts search $datestring"
 $mail.body =$bodyText
-$mail.attachments.add($attachment)
+$attachment =resolve-path $attachment
+$mail.attachments.add($attachment.path)
 
 $sendTo.split(',')|foreach{
 	if($_){
