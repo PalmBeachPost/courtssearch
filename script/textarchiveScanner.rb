@@ -8,8 +8,7 @@
 	require g
 }
 
-# DB = Sequel.sqlite('../datafiles/defendant_names.db')
-DB = Sequel.sqlite('daily_court_data.db')
+DB = Sequel.sqlite('../datafiles/daily_court_data.db')
 
 DB.create_table? :defendants do 
 	primary_key :row_id
@@ -32,12 +31,9 @@ charges = DB[:charges]
 
 today_date = (Time.now).strftime("%Y-%m-%d")
 
-# File.open("../datafiles/defendants_"+today_date+".csv","w"){|f|
-# File.open(today_date+".csv","w"){|f|
-	# CSV.read("../datafiles/Court Calendar.csv")[4..-1].map{|row|
-	case_num = nil
+case_num = nil
 
-	CSV.read("Court Calendar.csv")[4..-1].map{|row|
+	CSV.read("../datafiles/Court Calendar.csv")[4..-1].map{|row|
 		if(row[4]!=nil)
 			case_num = row[5]
 
@@ -118,7 +114,7 @@ today_date = (Time.now).strftime("%Y-%m-%d")
 	]
 
 
-	File.open(today_date+"COURTS.csv", "w"){|f|
+	File.open("../datafiles/defendants_"+today_date+".csv", "w"){|f|
 		f.puts(headers.to_csv)
 		p headers
 		DB[
