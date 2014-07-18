@@ -5,6 +5,7 @@
 ruby textArchiveScanner.rb
 
 #send the result in email
+#$addresses ="ksukumar@pbpost.com"
 $addresses ="ksukumar@pbpost.com,cpersaud@pbpost.com,fzarkhin@pbpost.com, jengelhardt@pbpost.com"
 $date = get-date -format yyyy-MM-dd
 $file = "../datafiles/defendants_$date.csv"
