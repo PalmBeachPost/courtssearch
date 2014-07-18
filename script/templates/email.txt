@@ -637,9 +637,7 @@ table.MsoTableLightShadingOddRow
 
 <p class=MsoNormal>See attached spreadsheet for more details.<o:p></o:p></p>
 
-<p class=MsoNormal>Thanks<o:p></o:p></p>
-
-<p class=MsoNormal>Kavya<o:p></o:p></p>
+<p class=MsoNormal>&nbsp; - The Data Team<o:p></o:p></p>
 
 </div>
 
