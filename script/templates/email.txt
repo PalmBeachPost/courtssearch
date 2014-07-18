@@ -596,7 +596,7 @@ table.MsoTableLightShadingOddRow
 <body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
 
 <div class=WordSection1>
-<h1 class=MsoNormal>Top [NUMBER] defendants coming to a court near you<o:p></o:p></h1>
+<!-- <h1 class=MsoNormal>Top [NUMBER] defendants from our archives<o:p></o:p></h1> -->
 
 <p class=MsoNormal><o:p>&nbsp;</o:p></p>
 
@@ -627,7 +627,7 @@ table.MsoTableLightShadingOddRow
   text1;border-left:none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:
   text1;border-right:none;padding:0in 5.4pt 0in 5.4pt;height:18.75pt'>
   <p class=MsoNormal style='mso-yfti-cnfc:1'><b><span style='color:black;
-  mso-themecolor:text1;mso-themeshade:191'>#HITS<o:p></o:p></span></b></p>
+  mso-themecolor:text1;mso-themeshade:191'># MENTIONS IN THE ARCHIVES<o:p></o:p></span></b></p>
   </td>
  </tr>
  [ROWS_LOCATION]
