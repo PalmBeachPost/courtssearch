@@ -599,7 +599,7 @@ table.MsoTableLightShadingOddRow
 <!-- <h1 class=MsoNormal>Top [NUMBER] defendants from our archives<o:p></o:p></h1> -->
 
 <p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
+<h3>ALL TRIALS AND MURDER CASES</h3>
 <table class=MsoTableLightShading border=1 cellspacing=0 cellpadding=0
  style='border-collapse:collapse;border:none;mso-border-top-alt:solid black 1.0pt;
  mso-border-top-themecolor:text1;mso-border-bottom-alt:solid black 1.0pt;
@@ -630,7 +630,41 @@ table.MsoTableLightShadingOddRow
   mso-themecolor:text1;mso-themeshade:191'># MENTIONS IN THE ARCHIVES<o:p></o:p></span></b></p>
   </td>
  </tr>
- [ROWS_LOCATION]
+ [TRIALANDMURDERSROWS_LOCATION]
+</table>
+
+<h3>ALL RECORDS</h3>
+<table class=MsoTableLightShading border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-top-alt:solid black 1.0pt;
+ mso-border-top-themecolor:text1;mso-border-bottom-alt:solid black 1.0pt;
+ mso-border-bottom-themecolor:text1;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:-1;mso-yfti-firstrow:yes;height:18.75pt'>
+  <td valign=top style='border-top:solid black 1.0pt;mso-border-top-themecolor:
+  text1;border-left:none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:
+  text1;border-right:none;padding:0in 5.4pt 0in 5.4pt;height:18.75pt'>
+  <p class=MsoNormal style='mso-yfti-cnfc:5'><b><span style='color:black;
+  mso-themecolor:text1;mso-themeshade:191'>DEFENDANT<o:p></o:p></span></b></p>
+  </td>
+  <td valign=top style='border-top:solid black 1.0pt;mso-border-top-themecolor:
+  text1;border-left:none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:
+  text1;border-right:none;padding:0in 5.4pt 0in 5.4pt;height:18.75pt'>
+  <p class=MsoNormal style='mso-yfti-cnfc:1'><b><span style='color:black;
+  mso-themecolor:text1;mso-themeshade:191'>EVENT<o:p></o:p></span></b></p>
+  </td>
+  <td valign=top style='border-top:solid black 1.0pt;mso-border-top-themecolor:
+  text1;border-left:none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:
+  text1;border-right:none;padding:0in 5.4pt 0in 5.4pt;height:18.75pt'>
+  <p class=MsoNormal style='mso-yfti-cnfc:1'><b><span style='color:black;
+  mso-themecolor:text1;mso-themeshade:191'>CHARGES<o:p></o:p></span></b></p>
+  </td>
+  <td valign=top style='border-top:solid black 1.0pt;mso-border-top-themecolor:
+  text1;border-left:none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:
+  text1;border-right:none;padding:0in 5.4pt 0in 5.4pt;height:18.75pt'>
+  <p class=MsoNormal style='mso-yfti-cnfc:1'><b><span style='color:black;
+  mso-themecolor:text1;mso-themeshade:191'># MENTIONS IN THE ARCHIVES<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ [ALLROWS_LOCATION]
 </table>
 
 <p class=MsoNormal><o:p>&nbsp;</o:p></p>
