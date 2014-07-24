@@ -1,7 +1,7 @@
 param(
     [Parameter(Mandatory=$true)]
      $datafile,
-     $n = 10,
+     $n = 10, #not used anymore
      $outfile
     )
 
@@ -42,7 +42,6 @@ $sortedlist|foreach{
 $emailTemplate = $emailTemplate.replace("[TRIALANDMURDERSROWS_LOCATION]",$rows)
 
 #ALL RECORDS
-
 $sortedlist = $defendants|
      sort Defendant -unique |
      sort {[int] $_."Number of matches in PBP text archive"} -descending |
