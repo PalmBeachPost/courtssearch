@@ -1,6 +1,7 @@
 param(
     $sendTo = "ksukumar@pbpost.com",
     $attachment ="..\datafiles\readme.md",
+    $subject = "Automated by sendMail",
     $bodytext =" "
     )
 
@@ -8,9 +9,8 @@ $outlook = new-object -com outlook.application;
 
 $mail = $outlook.CreateItem(0)
 
-$datestring = get-date -format d
-$mail.subject ="Courts search $datestring"
-$mail.body =$bodyText
+$mail.subject =$subject
+$mail.HTMLBody =$bodyText
 $attachment =resolve-path $attachment
 $mail.attachments.add($attachment.path)
 
