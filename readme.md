@@ -1,3 +1,6 @@
+Everyday Palm Beach County Courts sends a daily docket that has all the scheduled court activity for the next day
+This script downlaods the email from Outlook, parses it into a DB, runs a search for each name in the docket against Palm Beach Post's archives and sends out a result email highlighting cases of interest.
+
 COURT CALENDAR SCANNER 
 ===
 
