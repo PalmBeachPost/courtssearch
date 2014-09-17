@@ -2,11 +2,11 @@
 .\DownloadCSV.ps1 
 
 #run ruby script to parse and search
-ruby textArchiveScanner.rb
+#ruby textArchiveScanner.rb
 
 #send the result in email
-#$addresses ="ksukumar@pbpost.com"
-$addresses ="ksukumar@pbpost.com,cpersaud@pbpost.com,fzarkhin@pbpost.com, jengelhardt@pbpost.com, dduret@pbpost.com"
+$addresses ="ksukumar@pbpost.com"
+#$addresses ="ksukumar@pbpost.com,cpersaud@pbpost.com,fzarkhin@pbpost.com, jengelhardt@pbpost.com, dduret@pbpost.com"
 $date = get-date -format yyyy-MM-dd
 $file = "../datafiles/defendants_$date.csv"
 

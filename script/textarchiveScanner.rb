@@ -3,6 +3,7 @@
 	'open-uri',
 	'nokogiri',
 	'sequel',
+	'sqlite3',
 	'csv'
 ].each{|g|
 	require g

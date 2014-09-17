@@ -627,7 +627,13 @@ table.MsoTableLightShadingOddRow
   text1;border-left:none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:
   text1;border-right:none;padding:0in 5.4pt 0in 5.4pt;height:18.75pt'>
   <p class=MsoNormal style='mso-yfti-cnfc:1'><b><span style='color:black;
-  mso-themecolor:text1;mso-themeshade:191'># MENTIONS IN THE ARCHIVES<o:p></o:p></span></b></p>
+  mso-themecolor:text1;mso-themeshade:191'>TOTAL MENTIONS IN THE ARCHIVES<o:p></o:p></span></b></p>
+  </td>
+  <td valign=top style='border-top:solid black 1.0pt;mso-border-top-themecolor:
+  text1;border-left:none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:
+  text1;border-right:none;padding:0in 5.4pt 0in 5.4pt;height:18.75pt'>
+  <p class=MsoNormal style='mso-yfti-cnfc:1'><b><span style='color:black;
+  mso-themecolor:text1;mso-themeshade:191'>CRIME RELATED MENTIONS IN THE ARCHIVES<o:p></o:p></span></b></p>
   </td>
  </tr>
  [TRIALANDMURDERSROWS_LOCATION]
@@ -661,7 +667,13 @@ table.MsoTableLightShadingOddRow
   text1;border-left:none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:
   text1;border-right:none;padding:0in 5.4pt 0in 5.4pt;height:18.75pt'>
   <p class=MsoNormal style='mso-yfti-cnfc:1'><b><span style='color:black;
-  mso-themecolor:text1;mso-themeshade:191'># MENTIONS IN THE ARCHIVES<o:p></o:p></span></b></p>
+  mso-themecolor:text1;mso-themeshade:191'>TOTAL MENTIONS IN THE ARCHIVES<o:p></o:p></span></b></p>
+  </td>
+  <td valign=top style='border-top:solid black 1.0pt;mso-border-top-themecolor:
+  text1;border-left:none;border-bottom:solid black 1.0pt;mso-border-bottom-themecolor:
+  text1;border-right:none;padding:0in 5.4pt 0in 5.4pt;height:18.75pt'>
+  <p class=MsoNormal style='mso-yfti-cnfc:1'><b><span style='color:black;
+  mso-themecolor:text1;mso-themeshade:191'>CRIME RELATED MENTIONS IN THE ARCHIVES<o:p></o:p></span></b></p>
   </td>
  </tr>
  [ALLROWS_LOCATION]

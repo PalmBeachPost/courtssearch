@@ -14,10 +14,11 @@ $rowTemplate = get-content "./templates/row.txt"
 $sortedlist = $defendants|
      where {($_."Recent event").contains("TRIAL") -or ($_.charge).toLower().contains("murder")}|
      sort Defendant -unique |
-     sort {[int] $_."Number of matches in PBP text archive"} -descending |
+     sort {[int] $_."Match count (narrow)"} -descending |
      select defendant, 
-        @{Name="Num";Expression={$_."Number of matches in PBP text archive"}}, 
-        @{Name="link";Expression={$_."PBP archive search result URL"}},
+        @{Name="numBroad";Expression={$_."Match count (broad)"}}, 
+        @{Name="numNarrow";Expression={$_."Match count (narrow)"}}, 
+        @{Name="link";Expression={$_."Search results URL (narrow)"}},
         @{Name="event";Expression={$_."Recent event"}}
 
 $rows=""
@@ -32,8 +33,8 @@ $sortedlist|foreach{
     $charges = $charges.trim(', ')
 
     #until i figure out a better way to format multi-line command chaining
-    $row = $rowTemplate.replace("[RESULT_URL]",$sortline.link).replace("[DEFANDANT_NAME]",$sortline.defendant)
-    $row = $row.replace("[EVENT_DESC]",$sortline.event).replace("[CHARGES]",$charges).replace("[HIT_COUNT]",$sortline.num)
+    $row = $rowTemplate.replace("[RESULT_URL]",$sortline.link).replace("[DEFENDANT_NAME]",$sortline.defendant)
+    $row = $row.replace("[EVENT_DESC]",$sortline.event).replace("[CHARGES]",$charges).replace("[HIT_COUNT_BROAD]",$sortline.numBroad).replace("[HIT_COUNT_NARROW]",$sortline.numNarrow)
 
     $rows += $row
         
@@ -44,10 +45,11 @@ $emailTemplate = $emailTemplate.replace("[TRIALANDMURDERSROWS_LOCATION]",$rows)
 #ALL RECORDS
 $sortedlist = $defendants|
      sort Defendant -unique |
-     sort {[int] $_."Number of matches in PBP text archive"} -descending |
+     sort {[int] $_."Match count (narrow)"} -descending |
      select defendant, 
-        @{Name="Num";Expression={$_."Number of matches in PBP text archive"}}, 
-        @{Name="link";Expression={$_."PBP archive search result URL"}},
+        @{Name="numBroad";Expression={$_."Match count (broad)"}}, 
+        @{Name="numNarrow";Expression={$_."Match count (narrow)"}}, 
+        @{Name="link";Expression={$_."Search results URL (narrow)"}},
         @{Name="event";Expression={$_."Recent event"}}
 
 $rows=""
@@ -62,8 +64,8 @@ $sortedlist|foreach{
     $charges = $charges.trim(', ')
 
     #until i figure out a better way to format multi-line command chaining
-    $row = $rowTemplate.replace("[RESULT_URL]",$sortline.link).replace("[DEFANDANT_NAME]",$sortline.defendant)
-    $row = $row.replace("[EVENT_DESC]",$sortline.event).replace("[CHARGES]",$charges).replace("[HIT_COUNT]",$sortline.num)
+    $row = $rowTemplate.replace("[RESULT_URL]",$sortline.link).replace("[DEFENDANT_NAME]",$sortline.defendant)
+    $row = $row.replace("[EVENT_DESC]",$sortline.event).replace("[CHARGES]",$charges).replace("[HIT_COUNT_BROAD]",$sortline.numBroad).replace("[HIT_COUNT_NARROW]",$sortline.numNarrow)
 
     $rows += $row
         

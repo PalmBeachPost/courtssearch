@@ -5,7 +5,7 @@
   Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
   color:black;mso-bidi-font-weight:bold'><a
   href="[RESULT_URL]"><span
-  style='mso-bidi-font-weight:normal'>[DEFANDANT_NAME]</span></a></span><span
+  style='mso-bidi-font-weight:normal'>[DEFENDANT_NAME]</span></a></span><span
   style='color:black;mso-themecolor:text1;mso-themeshade:191;mso-bidi-font-weight:
   bold'><o:p></o:p></span></p>
   </td>
@@ -26,7 +26,14 @@
   text1;mso-background-themetint:63;padding:0in 5.4pt 0in 5.4pt;height:18.75pt'>
   <p class=MsoNormal style='mso-yfti-cnfc:64'><span style='mso-ascii-font-family:
   Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-  color:black'>[HIT_COUNT]</span><span style='color:black;mso-themecolor:text1;
+  color:black'>[HIT_COUNT_BROAD]</span><span style='color:black;mso-themecolor:text1;
+  mso-themeshade:191'><o:p></o:p></span></p>
+  </td>
+  <td valign=top style='border:none;background:silver;mso-background-themecolor:
+  text1;mso-background-themetint:63;padding:0in 5.4pt 0in 5.4pt;height:18.75pt'>
+  <p class=MsoNormal style='mso-yfti-cnfc:64'><span style='mso-ascii-font-family:
+  Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+  color:black'>[HIT_COUNT_NARROW]</span><span style='color:black;mso-themecolor:text1;
   mso-themeshade:191'><o:p></o:p></span></p>
   </td>
  </tr> 
