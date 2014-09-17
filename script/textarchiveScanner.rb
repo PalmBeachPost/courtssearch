@@ -1,12 +1,11 @@
 [
 	'rubygems',
-	'open-uri',
-	'nokogiri',
-	'sequel',
-	'sqlite3',
-	'csv'
+	'open-uri', # Lets us open web pages
+	'nokogiri', # Lets us parse web pages
+	'sequel', # Lets us use SQL databases
+	'csv' # Lets us open, write to, and parse CSV files
 ].each{|g|
-	require g
+	require g # Loading up these gems
 }
 
 today_date = (Time.now).strftime("%Y-%m-%d")
