@@ -1,10 +1,9 @@
 # Court Docket-Archive Search
-===
+---
 Everyday Palm Beach County Courts sends a daily docket that has all the scheduled court activity for the next day
 This script downlaods the email from Outlook, parses it into a DB, runs a search for each name in the docket against Palm Beach Post's archives and sends out a result email highlighting cases of interest.
 
 ## Court Calendar Scanner 
----
 This Ruby script scans the "Court Calendar.csv" file sent out to media outlets daily. 
 
 ### How It Works
