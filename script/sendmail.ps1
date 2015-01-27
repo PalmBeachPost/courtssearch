@@ -1,5 +1,5 @@
 param(
-    $sendTo = "ksukumar@pbpost.com",
+    $sendTo = "ref@pbpost.com",
     $attachment ="..\datafiles\readme.md",
     $subject = "Automated by sendMail",
     $bodytext =" "
