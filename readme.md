@@ -61,3 +61,4 @@ folder ="courtscsv"
 	sendMail.ps1 -senTo < a comma-separated list of email addresses> - attachment <full path of the file to attach>
 3. optional parameter
 	-bodyText "email text"
+---
