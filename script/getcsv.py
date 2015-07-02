@@ -27,7 +27,7 @@ while (not os.path.isfile(detach_dir + "/" + target)) or datetime.now().strftime
 	# connecting to the gmail imap server
 	print "Looking for email ..."
 	m = imaplib.IMAP4_SSL("imap.gmail.com")
-	m.login(creds.access['gmailacccount'], creds.access['gmailpassword'])
+	m.login(creds.access['gmailaccount'], creds.access['gmailpassword'])
 
 	# use m.list() to get all the mailboxes
 	m.select(creds.access['gmailbox'])
