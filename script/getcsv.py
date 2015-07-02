@@ -17,11 +17,18 @@ import creds
 date.today().strftime("%d-%b-%Y")
 detach_dir = '../datafiles' # directory where to save attachments (default: current)
 target="Court Calendar.csv"
+htm="email.htm"
 
+
+## Start off with a clean slate of files
 
 if os.path.isfile(detach_dir + "/" + target):
 	print "Deleting old file " + detach_dir + "/" + target
 	os.remove(detach_dir + "/" + target)
+
+if os.path.isfile(detach_dir + "/" + htm):
+	print "Deleting old file " + detach_dir + "/" + htm
+	os.remove(detach_dir + "/" + htm)
 
 while (not os.path.isfile(detach_dir + "/" + target)) or datetime.now().strftime("%H")<=22:
 	# connecting to the gmail imap server
