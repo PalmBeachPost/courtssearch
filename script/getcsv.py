@@ -26,7 +26,7 @@ if os.path.isfile(detach_dir + "/" + target):
 while (not os.path.isfile(detach_dir + "/" + target)) or datetime.now().strftime("%H")<=22:
 	# connecting to the gmail imap server
 	print "Looking for email ..."
-	m = imaplib.IMAP4_SSL("imap.gmail.com")
+	m = imaplib.IMAP4_SSL("imap.gmail.com")		# Got a SSL handshake error here once.
 	m.login(creds.access['gmailaccount'], creds.access['gmailpassword'])
 
 	# use m.list() to get all the mailboxes
