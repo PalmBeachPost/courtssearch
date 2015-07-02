@@ -12,7 +12,7 @@ $rowTemplate = get-content "./templates/row.txt"
 
 #MURDER AND TRIALS
 $sortedlist = $defendants|
-     where {($_."Recent event").contains("TRIAL") -or ($_.charge).toLower().contains("murder")}|
+     where {($_."Recent event").contains("TRIAL") -or ($_.charge).toLower().contains("murder") -or ($_.charge).toLower().contains("homicide") -or ($_.charge).toLower().contains("manslaughter")}|
      sort Defendant -unique |
      sort {[int] $_."Match count (narrow)"} -descending |
      select defendant, 
