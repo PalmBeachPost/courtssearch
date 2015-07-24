@@ -23,17 +23,34 @@ htm="email.htm"
 ## Start off with a clean slate of files
 
 if os.path.isfile(detach_dir + "/" + target):
-	print "Deleting old file " + detach_dir + "/" + target
+	print("Deleting old file " + detach_dir + "/" + target + " ... " + time.asctime(time.localtime()))
 	os.remove(detach_dir + "/" + target)
 
 if os.path.isfile(detach_dir + "/" + htm):
-	print "Deleting old file " + detach_dir + "/" + htm
+	print("Deleting old file " + detach_dir + "/" + htm + " ... " + time.asctime(time.localtime()))
 	os.remove(detach_dir + "/" + htm)
 
 while (not os.path.isfile(detach_dir + "/" + target)) or datetime.now().strftime("%H")<=22:
 	# connecting to the gmail imap server
-	print "Looking for email ..."
-	m = imaplib.IMAP4_SSL("imap.gmail.com")		# Got a SSL handshake error here once.
+	print("Looking for email ... " + time.asctime(time.localtime()))
+	try:
+		m = imaplib.IMAP4_SSL("imap.gmail.com")		# Got a SSL handshake error here once.
+	except ssl.SSLEOFError:
+		print("Got that SSL handshake error again.************************ Trying again.")
+		print(" ... " + time.asctime(time.localtime()))
+		try:
+			time.sleep(60)
+			m = imaplib.IMAP4_SSL("imap.gmail.com")		# Got a SSL handshake error here once.
+		except ssl.SSLEOFError:
+			print("Got that SSL handshake error again.************************ Trying again.")
+			print(" ... " + time.asctime(time.localtime()))
+			try:
+				time.sleep(60)
+				m = imaplib.IMAP4_SSL("imap.gmail.com")		# Got a SSL handshake error here once.
+			except ssl.SSLEOFError:
+				print("Got that SSL handshake error again.************************ Trying again.")
+				print(" ... " + time.asctime(time.localtime()))
+			
 	m.login(creds.access['gmailaccount'], creds.access['gmailpassword'])
 
 	# use m.list() to get all the mailboxes
@@ -52,13 +69,14 @@ while (not os.path.isfile(detach_dir + "/" + target)) or datetime.now().strftime
 	for emailid in items:
 		resp, data = m.fetch(emailid, "(RFC822)") # fetching the mail, "`(RFC822)`" means "get the whole stuff", but you can ask for headers only, etc
 		email_body = data[0][1] # getting the mail content
+		mail = ""
 		mail = email.message_from_string(email_body) # parsing the mail content to get a mail object
 
 		#Check if any attachments at all
 		if mail.get_content_maintype() != 'multipart':
 			continue
 
-		print "["+mail["From"]+"] :" + mail["Subject"]
+		print("["+mail["From"]+"] :" + mail["Subject"])
 
 		# we use walk to create a generator so we can iterate on the parts and forget about the recursive headach
 		for part in mail.walk():
@@ -79,14 +97,14 @@ while (not os.path.isfile(detach_dir + "/" + target)) or datetime.now().strftime
 				counter += 1
 
 			if not filename==target:
-				print "Found filename " + filename + " but I don't know what it is and don't trust it. Ignoring."
+				print("Found filename " + filename + " but I don't know what it is and don't trust it. Ignoring.")
 			else:
-				print "Found " + filename + " so we can get to work."		
+				print("Found " + filename + " so we can get to work.")
 				fp = open(detach_dir + "/" + filename, 'wb')
 				fp.write(part.get_payload(decode=True))
 				fp.close()
 	if not os.path.isfile(detach_dir + "/" + target):
-		print "Correct attachment not found. Waiting a while before trying again."
+		print("Correct attachment not found. Waiting a while before trying again.")
 		time.sleep(360)			# Wait a while if we don't have our file yet.
 			
 	## Yeah, the below stuff just never worked.

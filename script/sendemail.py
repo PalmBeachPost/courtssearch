@@ -23,7 +23,7 @@ toaddr = creds.access['emailto']
 msgsource = "..\datafiles\email.htm"
 msgattach = "..\datafiles\defendants_" + str(date.today().strftime("%Y-%m-%d")) + ".csv"
 toaddr = toaddr.replace(" ", "")			# Get rid of extra spaces
-subject="Courts search " + str(date.today().strftime("%Y-%m-%d"))
+subject="TEST TEST TEST TEST Courts search " + str(date.today().strftime("%Y-%m-%d"))
 
 if not (os.path.isfile(msgsource) and os.path.isfile(msgattach)):
 	print "Some of the files are missing. Not emailing."
