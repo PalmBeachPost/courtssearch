@@ -95,8 +95,11 @@ DB = Sequel.connect(
 					next
 				end
 				
-				p = page.css('p[style="font-size:0.917em"]')[1] # The tag that has the number of results
-				num_matches = p.text.strip.scan(/\d{1,}/)[1].to_i # The number of articles containing what we searched for
+                # Hey! Fixes attempted by Stucka, December 2016. For some reason the Nokogiri search wasn't showing up properly, going always to [0] instead of [1]. Also, using "p" as a function name and variable name is weird.
+				# p = page.css('p[style="font-size:0.917em"]')[1] # The tag that has the number of results
+                # num_matches = p.text.strip.scan(/\d{1,}/)[1].to_i # The number of articles containing what we searched for
+                graf = page.css('p[style="font-size:0.917em"]')[0] # The tag that has the number of results
+                num_matches = graf.text.strip.scan(/\d{1,}/)[1].to_i # The number of articles containing what we searched for
 
 				match_arr = [case_num, first_last, recent_event, num_matches, url]
 				
