@@ -1,28 +1,28 @@
+## This requires some version of Powershell greater than 2.0. 4.0 seems to work fine.
+
+## This is the master script, which calls a bunch of helpers:
+## -- getcsv.py , which gets a certain CSV file attachment from the court system.
+## -- textArchiveScanner.rb , which processes the initial CSV file by checking our story archives
+## -- CreateEmailText.ps1 , which processes the archive scanner's CSV file to create HTML
+## -- sendemail.py , which sends the CSV and HTML files using
+## -- bin/blat.exe
+
+## getcsv.py is designed to check regularly for the new CSV file until it's available. It will
+## quit if the file isn't sent before a certain time, late at night.
+
+
 #Download today's files
-.\DownloadCSV.ps1 
+####### .\DownloadCSV.ps1
+c:\python27\python getcsv.py
 
 #run ruby script to parse and search
-ruby textArchiveScanner.rb
+c:\Ruby193\bin\ruby textArchiveScanner.rb
 
-#send the result in email
-#$addresses ="ksukumar@pbpost.com"  # this is for debugging
-$addresses ="ksukumar@pbpost.com,jengelhardt@pbpost.com, JMusgrave@pbpost.com, dduret@pbpost.com, jwhigham@pbpost.com, jcoleman@pbpost.com, jbisognano@pbpost.com, CStapleton@pbpost.com, ref@pbpost.com"
 $date = get-date -format yyyy-MM-dd
 $file = "../datafiles/defendants_$date.csv"
 
-$datestring = get-date -format d
-$subject ="Courts search $datestring"
-
-$emailfile = "../datafiles/email.htm";
+$emailfile = "../datafiles/email.htm"
 .\CreateEmailText.ps1 -datafile $file -outfile $emailfile -n 10
 
-$bodytext = get-content "../datafiles/email.htm"
+c:\python27\python sendemail.py
 
-if(test-path $file){
-    $file = resolve-path $file
-    write-host "sending $file"
-    .\SendMail.ps1 -sendTo $addresses -attachment $file.path -subject $subject -bodytext $bodytext
-}
-else{
-    .\SendMail.ps1 -subject "ERROR processing courts file" -bodytext "Today is not a good day. Something went wrong. No result file was found. Check script"
-}

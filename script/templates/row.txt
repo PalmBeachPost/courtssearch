@@ -20,7 +20,7 @@
   text1;mso-background-themetint:63;padding:0in 5.4pt 0in 5.4pt;height:18.75pt'>
   <p class=MsoNormal style='mso-yfti-cnfc:64'><span style='mso-ascii-font-family:
   Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-  color:black'>[CHARGES]<o:p></o:p></span></p>
+  color:black'><span title='[CASE_NUMBER]'>[CHARGES]</span><A HREF='https://showcase.mypalmbeachclerk.com/showcaseweb/#Home' target='blank' title='[CASE_NUMBER]'>+</A><o:p></o:p></span></p>
   </td>
   <td valign=top style='border:none;background:silver;mso-background-themecolor:
   text1;mso-background-themetint:63;padding:0in 5.4pt 0in 5.4pt;height:18.75pt'>
