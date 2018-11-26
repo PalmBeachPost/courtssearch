@@ -17,7 +17,7 @@ DB = Sequel.connect(
     :adapter => 'mysql',
     :user=>'cpersaud',
     :password=>'Post1234',
-    :host=>'NWPBPBP0DPC2334.cmg.int',
+    :host=>'NWPBPBP0DPC2334',
     :database=>'daily_court_docket'
 )
 
