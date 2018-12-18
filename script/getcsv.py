@@ -20,6 +20,7 @@ emailpassword = os.environ["GOOGLEPASSWORD"]
 date.today().strftime("%d-%b-%Y")
 detach_dir = '../datafiles' # directory where to save attachments (default: current)
 target="Court Calendar.csv"
+
 htm="email.htm"
 
 
@@ -100,11 +101,11 @@ while (not os.path.isfile(detach_dir + "/" + target)) or datetime.now().strftime
                 filename = 'part-%03d%s' % (counter, 'bin')
                 counter += 1
 
-            if not filename==target:
+            if not filename==target or if filename == "OLD DO NOT USE Court Calendar.csv":
                 print("Found filename " + filename + " but I don't know what it is and don't trust it. Ignoring.")
             else:
                 print("Found " + filename + " so we can get to work.")
-                fp = open(detach_dir + "/" + filename, 'wb')
+                fp = open(detach_dir + "/" + filename.replace("OLD DO NOT USE ", ""), 'wb')
                 fp.write(part.get_payload(decode=True))
                 fp.close()
     if not os.path.isfile(detach_dir + "/" + target):
