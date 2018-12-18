@@ -101,7 +101,7 @@ while (not os.path.isfile(detach_dir + "/" + target)) or datetime.now().strftime
                 filename = 'part-%03d%s' % (counter, 'bin')
                 counter += 1
 
-            if not filename==target or if filename == "OLD DO NOT USE Court Calendar.csv":
+            if not filename == target and filename != "OLD DO NOT USE " + target:
                 print("Found filename " + filename + " but I don't know what it is and don't trust it. Ignoring.")
             else:
                 print("Found " + filename + " so we can get to work.")
