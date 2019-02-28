@@ -1,16 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[67]:
-
-
 from pyquery import PyQuery as pq
+import requests
+import MySQLdb
+
+import datetime
+import re
+import csv
 from collections import OrderedDict
-import requests, csv, MySQLdb, datetime, re
-
-
-# In[68]:
-
 
 db = MySQLdb.connect(
     host = "NWPBPBP0DPC2334",
@@ -20,17 +18,9 @@ db = MySQLdb.connect(
 )
 cursor = db.cursor()
 
-
-# In[69]:
-
-
 cursor.execute("CREATE TABLE IF NOT EXISTS defendants_broad (row_id INT, case_num VARCHAR(255), defendant VARCHAR(255), recent_events VARCHAR(255), num_matches INT, search_result_url VARCHAR(255), scan_date DATE, UNIQUE(case_num), PRIMARY KEY(row_id))")
 cursor.execute("CREATE TABLE IF NOT EXISTS defendants_narrow (row_id INT, case_num VARCHAR(255), defendant VARCHAR(255), recent_events VARCHAR(255), num_matches INT, search_result_url VARCHAR(255), scan_date DATE, UNIQUE(case_num), PRIMARY KEY(row_id))")
 cursor.execute("CREATE TABLE IF NOT EXISTS charges (row_id INT, charge VARCHAR(255), case_num VARCHAR(255), scan_date DATE)")
-
-
-# In[72]:
-
 
 inputFilename = "../datafiles/Criminal Calendar.csv"
 with open(inputFilename) as f:

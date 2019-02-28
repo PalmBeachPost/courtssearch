@@ -16,7 +16,10 @@
 c:\python27\python getcsv.py
 
 #run ruby script to parse and search
-c:\Ruby193\bin\ruby textArchiveScanner.rb
+# c:\Ruby193\bin\ruby textArchiveScanner.rb
+
+# Run Python script to parse and search
+c:\python37\python textarchiveScanner.py
 
 $date = get-date -format yyyy-MM-dd
 $file = "../datafiles/defendants_$date.csv"
