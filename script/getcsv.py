@@ -19,7 +19,7 @@ emailpassword = os.environ["GOOGLEPASSWORD"]
 
 date.today().strftime("%d-%b-%Y")
 detach_dir = '../datafiles' # directory where to save attachments (default: current)
-target="Court Calendar.csv"
+target="Criminal Calendar.csv"
 
 htm="email.htm"
 
