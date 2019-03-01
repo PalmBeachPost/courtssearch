@@ -45,6 +45,11 @@ with open(inputFilename) as f:
 
         courtEvent = row["CourtEventTypeStr"]
         
+        charge = row['StatuteDescription']
+        
+        if charge != '':
+            cursor.execute("""INSERT INTO charges (charge, case_num, scan_date) values (%s, %s, %s);""", [charge, caseNum, todayDate])
+            
         key = "!!!!".join([caseNum,defendantFirstLastName, courtEvent])
         
         if key not in keylist:   # If we've already searched on this person and written on 'em, no need to do it again
@@ -120,9 +125,10 @@ cursor.execute(
 )
 
 rows = cursor.fetchall()
-headers = [col[0] for col in cursor.description]    # get headers
+# headers = [col[0] for col in cursor.description]    # get headers
+headers = tuple(["Case Number", "Scanned date", "Recent event", "Defendant", "Charge", "Match count (broad)", "Match count (narrow)", "Search results URL (narrow)"])
 rows = (tuple(headers),) + rows     # add headers to rows
-fp = open("../datafiles/defendants_"+todayDate+".csv", 'w')
+fp = open("../datafiles/defendants_"+todayDate+".csv", 'w', newline='')
 myFile = csv.writer(fp)
 # myFile.writerow(headers)
 myFile.writerows(rows)
