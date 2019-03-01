@@ -21,6 +21,9 @@ db = MySQLdb.connect(
 
 todayDate = datetime.datetime.now().strftime("%Y-%m-%d")
 
+# todayDate='2019-02-28'   ############################ HEY!
+
+
 urldict = {}
 keylist = []
 
@@ -72,11 +75,17 @@ with open(inputFilename) as f:
                     template = "An exception of type {0} occurred. Arguments:\n{1!r}"
                     message = template.format(type(ex).__name__, ex.args)
                     print(message)
-                    sql = "UPDATE "+tblName+" SET num_matches="+numberOfResults+" WHERE case_num='"+caseNum+"'" if courtEvent=='' else "UPDATE "+tblName+" SET num_matches="+numberOfResults+", recent_event='"+courtEvent+"' WHERE case_num='"+caseNum+"'"
+                    # sql = "UPDATE "+tblName+" SET num_matches="+numberOfResults+" WHERE case_num='"+caseNum+"'" if courtEvent=='' else "UPDATE "+tblName+" SET num_matches="+numberOfResults+", recent_event='"+courtEvent+"' WHERE case_num='"+caseNum+"'"
+                    sql = f"UPDATE {tblName} SET num_matches={numberOfResults}, recent_event='{courtEvent}', scan_date='{todayDate}' where case_num='{caseNum}';"
+                    if courtEvent == '':
+                        sql.replace(f"recent_event='{courtEvent}', ", "")
+                    # print(f"HEY!   {sql}")    
                     cursor.execute(sql)
+                    # db.commit()
                 print("==")
             print("======")
 
+db.commit()     # Write all pending transactions            
 
 cursor.execute(
     """ SELECT
