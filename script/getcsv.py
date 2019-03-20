@@ -34,7 +34,7 @@ if os.path.isfile(detach_dir + "/" + htm):
     print("Deleting old file " + detach_dir + "/" + htm + " ... " + time.asctime(time.localtime()))
     os.remove(detach_dir + "/" + htm)
 
-while (not os.path.isfile(detach_dir + "/" + target)) or datetime.now().strftime("%H")<=22:
+while (not os.path.isfile(detach_dir + "/" + target)) or datetime.now().strftime("%H") <= "22":
     # connecting to the gmail imap server
     print("Looking for email ... " + time.asctime(time.localtime()))
     try:
@@ -73,7 +73,8 @@ while (not os.path.isfile(detach_dir + "/" + target)) or datetime.now().strftime
 
     for emailid in items:
         resp, data = m.fetch(emailid, "(RFC822)") # fetching the mail, "`(RFC822)`" means "get the whole stuff", but you can ask for headers only, etc
-        email_body = data[0][1] # getting the mail content
+        email_body = data[0][1].decode('utf-8') # getting the mail content
+        # print(email_body)
         mail = ""
         mail = email.message_from_string(email_body) # parsing the mail content to get a mail object
 
@@ -108,6 +109,8 @@ while (not os.path.isfile(detach_dir + "/" + target)) or datetime.now().strftime
                 fp = open(detach_dir + "/" + filename.replace("OLD DO NOT USE ", ""), 'wb')
                 fp.write(part.get_payload(decode=True))
                 fp.close()
+                import sys   # quit after processing
+                sys.exit(1)
     if not os.path.isfile(detach_dir + "/" + target):
         print("Correct attachment not found. Waiting a while before trying again.")
         time.sleep(360)         # Wait a while if we don't have our file yet.
