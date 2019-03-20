@@ -13,7 +13,7 @@ from collections import OrderedDict
 inputFilename = "../datafiles/Criminal Calendar.csv"
 
 db = MySQLdb.connect(
-    host="NWPBPBP0DPC2334",
+    host="localhost",
     user="cpersaud",
     password="Post1234",
     db="daily_court_docket"

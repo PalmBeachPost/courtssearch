@@ -13,7 +13,7 @@
 
 #Download today's files
 ####### .\DownloadCSV.ps1
-c:\python27\python getcsv.py
+c:\python37\python getcsv.py
 
 #run ruby script to parse and search
 # c:\Ruby193\bin\ruby textArchiveScanner.rb
@@ -27,5 +27,5 @@ $file = "../datafiles/defendants_$date.csv"
 $emailfile = "../datafiles/email.htm"
 .\CreateEmailText.ps1 -datafile $file -outfile $emailfile -n 10
 
-c:\python27\python sendemail.py
+c:\python37\python sendemail.py
 
